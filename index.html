@@ -66,6 +66,29 @@
       let correctas = 0;
       preguntasActuales.forEach((q, i) => {
         const seleccionada = document.querySelector(`input[name="q${i}"]:checked`);
+        const opciones = document.getElementsByName(`q${i}`);
+        const tarjeta = opciones[0].closest('.card');
+
+        const previa = tarjeta.querySelector('.respuesta-correcta');
+        if (previa) previa.remove();
+
+        let resultadoTexto = '';
+        if (seleccionada) {
+          if (seleccionada.value === q.respuesta) {
+            correctas++;
+            resultadoTexto = `<div class="respuesta-correcta" style="color: green; margin-top: 8px;"><strong>✅ Correcto.</strong> Respuesta: ${q.respuesta}</div>`;
+          } else {
+            resultadoTexto = `<div class="respuesta-correcta" style="color: red; margin-top: 8px;"><strong>❌ Incorrecto.</strong> Respuesta correcta: ${q.respuesta}</div>`;
+          }
+        } else {
+          resultadoTexto = `<div class="respuesta-correcta" style="color: orange; margin-top: 8px;"><strong>⚠️ Sin responder.</strong> Respuesta correcta: ${q.respuesta}</div>`;
+        }
+
+        tarjeta.insertAdjacentHTML('beforeend', resultadoTexto);
+      });
+
+      document.getElementById('resultado').textContent = `Obtuviste ${correctas} de ${preguntasActuales.length} respuestas correctas.`;
+    }"]:checked`);
         if (seleccionada && seleccionada.value === q.respuesta) {
           correctas++;
         }
