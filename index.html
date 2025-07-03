@@ -2,90 +2,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulador NWSA Real</title>
-  <style>
-    body {{ font-family: sans-serif; max-width: 700px; margin: auto; padding: 20px; }}
-    .card {{ border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 16px; }}
-    .question {{ font-weight: bold; }}
-    .options {{ margin-top: 8px; }}
-    .options label {{ display: block; margin-bottom: 4px; }}
-    button {{ padding: 10px 16px; margin-top: 10px; cursor: pointer; }}
-    .result {{ font-size: 1.2em; margin-top: 20px; font-weight: bold; }}
-  </style>
+    <meta charset="UTF-8">
+    <title>Simulador NWSA Real</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .pregunta { margin-bottom: 20px; }
+        .correcta { color: green; }
+        .incorrecta { color: red; }
+    </style>
 </head>
 <body>
-  <h1>Simulador de Examen NWSA - Preguntas Reales</h1>
-  <p><strong>Total de preguntas en el pool:</strong> {count}</p>
-  <div id="quiz"></div>
-  <button onclick="evaluar()">Evaluar</button>
-  <button onclick="generarPreguntas()">Resetear Preguntas</button>
-  <div class="result" id="resultado"></div>
+    <h1>Simulador de Examen NWSA - Preguntas Reales</h1>
+    <p><strong>Total de preguntas en el pool:</strong> 200</p>
+    <div id="contenedor-preguntas"></div>
+    <button onclick="evaluar()">Evaluar</button>
+    <button onclick="resetear()">Resetear Preguntas</button>
 
-  <script>
-    const banco = {banco_json};
+    <script src="banco.js"></script>
+    <script>
+        function generarPreguntas() {
+            const contenedor = document.getElementById("contenedor-preguntas");
+            contenedor.innerHTML = "";
+            const seleccionadas = banco.sort(() => 0.5 - Math.random()).slice(0, 20);
+            seleccionadas.forEach((item, i) => {
+                const div = document.createElement("div");
+                div.className = "pregunta";
+                div.innerHTML = `<strong>${i + 1}. ${item.pregunta}</strong><br>` +
+                    item.opciones.map((op, idx) =>
+                        `<label><input type="radio" name="p${i}" value="${op}"> ${op}</label><br>`
+                    ).join("");
+                div.dataset.respuesta = item.respuesta;
+                contenedor.appendChild(div);
+            });
+        }
 
-    let preguntasActuales = [];
+        function evaluar() {
+            const preguntas = document.querySelectorAll(".pregunta");
+            preguntas.forEach(p => {
+                const seleccionada = p.querySelector("input:checked");
+                const correcta = p.dataset.respuesta;
+                if (seleccionada) {
+                    if (seleccionada.value === correcta) {
+                        seleccionada.parentElement.classList.add("correcta");
+                    } else {
+                        seleccionada.parentElement.classList.add("incorrecta");
+                        const opciones = p.querySelectorAll("input");
+                        opciones.forEach(op => {
+                            if (op.value === correcta) {
+                                op.parentElement.classList.add("correcta");
+                            }
+                        });
+                    }
+                }
+            });
+        }
 
-    function generarPreguntas() {{
-      document.getElementById('resultado').textContent = "";
-      const quiz = document.getElementById('quiz');
-      quiz.innerHTML = "";
-      const usadas = new Set();
-      preguntasActuales = [];
+        function resetear() {
+            generarPreguntas();
+        }
 
-      while (preguntasActuales.length < 20) {{
-        const index = Math.floor(Math.random() * banco.length);
-        if (!usadas.has(index)) {{
-          usadas.add(index);
-          preguntasActuales.push(banco[index]);
-        }}
-      }}
-
-      preguntasActuales.forEach((q, i) => {{
-        const div = document.createElement('div');
-        div.className = "card";
-        div.innerHTML = `<div class="question">${{i + 1}}. ${{q.pregunta}}</div>`;
-        const opcionesHTML = q.opciones.map(op => `
-          <label>
-            <input type="radio" name="q${{i}}" value="${{op}}"> ${{op}}
-          </label>
-        `).join('');
-        div.innerHTML += `<div class="options">${{opcionesHTML}}</div>`;
-        quiz.appendChild(div);
-      }});
-    }}
-
-    function evaluar() {{
-      let correctas = 0;
-      preguntasActuales.forEach((q, i) => {{
-        const seleccionada = document.querySelector(`input[name="q${{i}}"]:checked`);
-        const opciones = document.getElementsByName(`q${{i}}`);
-        const tarjeta = opciones[0].closest('.card');
-
-        const previa = tarjeta.querySelector('.respuesta-correcta');
-        if (previa) previa.remove();
-
-        let resultadoTexto = '';
-        if (seleccionada) {{
-          if (seleccionada.value === q.respuesta) {{
-            correctas++;
-            resultadoTexto = `<div class="respuesta-correcta" style="color: green; margin-top: 8px;"><strong>✅ Correcto.</strong> Respuesta: ${{q.respuesta}}</div>`;
-          }} else {{
-            resultadoTexto = `<div class="respuesta-correcta" style="color: red; margin-top: 8px;"><strong>❌ Incorrecto.</strong> Respuesta correcta: ${{q.respuesta}}</div>`;
-          }}
-        }} else {{
-          resultadoTexto = `<div class="respuesta-correcta" style="color: orange; margin-top: 8px;"><strong>⚠️ Sin responder.</strong> Respuesta correcta: ${{q.respuesta}}</div>`;
-        }}
-
-        tarjeta.insertAdjacentHTML('beforeend', resultadoTexto);
-      }});
-
-      document.getElementById('resultado').textContent = `Obtuviste ${{correctas}} de ${{preguntasActuales.length}} respuestas correctas.`;
-    }}
-
-    generarPreguntas();
-  </script>
+        // Esperar a que banco.js cargue y defina banco
+        window.onload = function() {
+            if (typeof banco !== "undefined" && banco.length > 0) {
+                generarPreguntas();
+            } else {
+                const script = document.createElement("script");
+                script.src = "banco.js";
+                script.onload = generarPreguntas;
+                document.body.appendChild(script);
+            }
+        }
+    </script>
 </body>
 </html>
