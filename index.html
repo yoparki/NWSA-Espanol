@@ -4,207 +4,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulador NWSA TTT1</title>
+  <title>Simulador NWSA Real</title>
   <style>
-    body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 20px; }
-    .card { border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-    .question { font-weight: bold; }
-    .options { margin-top: 8px; }
-    .options label { display: block; margin-bottom: 4px; }
-    button { padding: 10px 16px; margin-top: 10px; cursor: pointer; }
-    .result { font-size: 1.2em; margin-top: 20px; font-weight: bold; }
+    body {{ font-family: sans-serif; max-width: 700px; margin: auto; padding: 20px; }}
+    .card {{ border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 16px; }}
+    .question {{ font-weight: bold; }}
+    .options {{ margin-top: 8px; }}
+    .options label {{ display: block; margin-bottom: 4px; }}
+    button {{ padding: 10px 16px; margin-top: 10px; cursor: pointer; }}
+    .result {{ font-size: 1.2em; margin-top: 20px; font-weight: bold; }}
   </style>
 </head>
 <body>
-  <h1>Simulador de Examen NWSA TTT1</h1>
-  <p><strong>Total de preguntas en el pool:</strong> 12</p>
+  <h1>Simulador de Examen NWSA - Preguntas Reales</h1>
+  <p><strong>Total de preguntas en el pool:</strong> {count}</p>
   <div id="quiz"></div>
   <button onclick="evaluar()">Evaluar</button>
   <button onclick="generarPreguntas()">Resetear Preguntas</button>
   <div class="result" id="resultado"></div>
 
   <script>
-    const banco = [
-  {
-    "pregunta": ") De acuerdo con las normas de la industria aplicables, ¿cuál es la altura",
-    "opciones": [
-      "mínima de una superficie o suelo inferior donde se debe utilizar la",
-      "protección contra caídas?",
-      "6 pies",
-      "12 pies"
-    ],
-    "respuesta": "mínima de una superficie o suelo inferior donde se debe utilizar la"
-  },
-  {
-    "pregunta": ") ¿Qué representan las letras LOTO?",
-    "opciones": [
-      "Lockout Tagout",
-      "Lockon",
-      "Tagout",
-      "Lockout"
-    ],
-    "respuesta": "Lockout Tagout"
-  },
-  {
-    "pregunta": ") Como mínimo, ¿con qué frecuencia o cada cuando un rescatista competente debe",
-    "opciones": [
-      "tener entrenamiento de actualización?",
-      "2 Años",
-      "4 Años",
-      "1 Años"
-    ],
-    "respuesta": "tener entrenamiento de actualización?"
-  },
-  {
-    "pregunta": ") Cuando usted está usando una cuerda sintética para levantar cargas todos los días, con qué frecuencia",
-    "opciones": [
-      "debe inspeccionarse la cuerda?",
-      "Anual",
-      "Diario",
-      "Semanal"
-    ],
-    "respuesta": "debe inspeccionarse la cuerda?"
-  },
-  {
-    "pregunta": ") Al completar una inspección visual de una fundación, ¿cuál es uno de los elementos importantes a",
-    "opciones": [
-      "buscar?",
-      "Basura",
-      "Pintura en la superficie",
-      "Superficie"
-    ],
-    "respuesta": "buscar?"
-  },
-  {
-    "pregunta": ") ¿Cuándo se debe usar un casco",
-    "opciones": [
-      "duro?",
-      "Cuando el contrato con el cliente requiere su uso",
-      "Cuando está obligado por la política del",
-      "empleador"
-    ],
-    "respuesta": "duro?"
-  },
-  {
-    "pregunta": "¿Qué significan las letras LOTO? Bloqueo y etiquetado en ingles es LOCK OUT",
-    "opciones": [
-      "TAG OUT",
-      "49. ¿Por qué es importante utilizar LOTO (bloquear y etiquetar)? Para prevenir",
-      "peligros eléctricos",
-      "50. ¿Cuál es la relación de distancia base cuando se usa una escalera de mano? 4: 1"
-    ],
-    "respuesta": "TAG OUT"
-  },
-  {
-    "pregunta": "¿Cuál es la fuerza de detención máxima permitida en caso de caída? 1800 libras",
-    "opciones": [
-      "52. Cuando se trabaja en una azotea y no hay barricadas ni parapetos, ¿qué se",
-      "puede utilizar para evitar caerse por el borde? Sistema de retención portátil",
-      "53. PPE es una abreviatura de = equipo de protección personal",
-      "54. Todo el equipo debe ser inspeccionado = Diariamente y antes de cada uso"
-    ],
-    "respuesta": "52. Cuando se trabaja en una azotea y no hay barricadas ni parapetos, ¿qué se"
-  },
-  {
-    "pregunta": "¿Cuál es el propósito de un poste de ginebra (GIN POLE) ? Para permitir un",
-    "opciones": [
-      "espacio superior extendido",
-      "56. ¿Cuál es el método apropiado cuando se usa cinta de butilo para",
-      "impermeabilizar puentes de antena? Teja, aplique una tensión uniforme, corte el",
-      "extremo con tijeras para evitar que se marque"
-    ],
-    "respuesta": "espacio superior extendido"
-  },
-  {
-    "pregunta": "¿Cuáles son los 3 componentes principales que componen un sistema personal",
-    "opciones": [
-      "de detención de caídas? Anclaje, arnés corporal, conectores",
-      "58. De acuerdo con los estándares de la industria, ¿a qué altura de trabajo se",
-      "requiere protección contra caídas? 6 '",
-      "59. Todos los mosquetones deben tener una resistencia de compuerta de bloqueo"
-    ],
-    "respuesta": "de detención de caídas? Anclaje, arnés corporal, conectores"
-  },
-  {
-    "pregunta": "Según ANSIA SSP A10.48, ¿qué significa PPE?",
-    "opciones": [
-      "- Personal Protective Equipment (equipo de proteccion personal)",
-      "3. ¿Qué es una parte de un monopole",
-      "- Base flange (brida Base)",
-      "4. ¿Cuál es la distancia máxima de extracción para el cordón de 6 pies?"
-    ],
-    "respuesta": "- Personal Protective Equipment (equipo de proteccion personal)"
-  },
-  {
-    "pregunta": "que es una buena medida de seguridad cuando se trabaja en un techo con borde desprotegido.",
-    "opciones": [
-      "- restricción de caída",
-      "66. En qué altura se encuentran estructuras temporales o permanentes, incluidos los atelumones,",
-      "marcado y/o iluminado?",
-      "-200’"
-    ],
-    "respuesta": "- restricción de caída"
-  }
-];
+    const banco = {banco_json};
 
     let preguntasActuales = [];
 
-    function generarPreguntas() {
+    function generarPreguntas() {{
       document.getElementById('resultado').textContent = "";
       const quiz = document.getElementById('quiz');
       quiz.innerHTML = "";
       const usadas = new Set();
       preguntasActuales = [];
 
-      while (preguntasActuales.length < 20) {
+      while (preguntasActuales.length < 20) {{
         const index = Math.floor(Math.random() * banco.length);
-        if (!usadas.has(index)) {
+        if (!usadas.has(index)) {{
           usadas.add(index);
           preguntasActuales.push(banco[index]);
-        }
-      }
+        }}
+      }}
 
-      preguntasActuales.forEach((q, i) => {
+      preguntasActuales.forEach((q, i) => {{
         const div = document.createElement('div');
         div.className = "card";
-        div.innerHTML = `<div class="question">${i + 1}. ${q.pregunta}</div>`;
+        div.innerHTML = `<div class="question">${{i + 1}}. ${{q.pregunta}}</div>`;
         const opcionesHTML = q.opciones.map(op => `
           <label>
-            <input type="radio" name="q${i}" value="${op}"> ${op}
+            <input type="radio" name="q${{i}}" value="${{op}}"> ${{op}}
           </label>
         `).join('');
-        div.innerHTML += `<div class="options">${opcionesHTML}</div>`;
+        div.innerHTML += `<div class="options">${{opcionesHTML}}</div>`;
         quiz.appendChild(div);
-      });
-    }
+      }});
+    }}
 
-    function evaluar() {
+    function evaluar() {{
       let correctas = 0;
-      preguntasActuales.forEach((q, i) => {
-        const seleccionada = document.querySelector(`input[name="q${i}"]:checked`);
-        const opciones = document.getElementsByName(`q${i}`);
+      preguntasActuales.forEach((q, i) => {{
+        const seleccionada = document.querySelector(`input[name="q${{i}}"]:checked`);
+        const opciones = document.getElementsByName(`q${{i}}`);
         const tarjeta = opciones[0].closest('.card');
 
         const previa = tarjeta.querySelector('.respuesta-correcta');
         if (previa) previa.remove();
 
         let resultadoTexto = '';
-        if (seleccionada) {
-          if (seleccionada.value === q.respuesta) {
+        if (seleccionada) {{
+          if (seleccionada.value === q.respuesta) {{
             correctas++;
-            resultadoTexto = `<div class="respuesta-correcta" style="color: green; margin-top: 8px;"><strong>✅ Correcto.</strong> Respuesta: ${q.respuesta}</div>`;
-          } else {
-            resultadoTexto = `<div class="respuesta-correcta" style="color: red; margin-top: 8px;"><strong>❌ Incorrecto.</strong> Respuesta correcta: ${q.respuesta}</div>`;
-          }
-        } else {
-          resultadoTexto = `<div class="respuesta-correcta" style="color: orange; margin-top: 8px;"><strong>⚠️ Sin responder.</strong> Respuesta correcta: ${q.respuesta}</div>`;
-        }
+            resultadoTexto = `<div class="respuesta-correcta" style="color: green; margin-top: 8px;"><strong>✅ Correcto.</strong> Respuesta: ${{q.respuesta}}</div>`;
+          }} else {{
+            resultadoTexto = `<div class="respuesta-correcta" style="color: red; margin-top: 8px;"><strong>❌ Incorrecto.</strong> Respuesta correcta: ${{q.respuesta}}</div>`;
+          }}
+        }} else {{
+          resultadoTexto = `<div class="respuesta-correcta" style="color: orange; margin-top: 8px;"><strong>⚠️ Sin responder.</strong> Respuesta correcta: ${{q.respuesta}}</div>`;
+        }}
 
         tarjeta.insertAdjacentHTML('beforeend', resultadoTexto);
-      });
+      }});
 
-      document.getElementById('resultado').textContent = `Obtuviste ${correctas} de ${preguntasActuales.length} respuestas correctas.`;
-    }
+      document.getElementById('resultado').textContent = `Obtuviste ${{correctas}} de ${{preguntasActuales.length}} respuestas correctas.`;
+    }}
 
     generarPreguntas();
   </script>
