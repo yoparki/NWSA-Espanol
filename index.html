@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,20 +25,1387 @@
 
   <script>
     const banco = [
-      { pregunta: "¿Cuándo se debe usar un casco duro?", opciones: ["Cuando hay riesgo de caída de objetos", "Cuando el contrato con el cliente lo requiere", "En todo momento en el sitio", "Solo si lo indica el supervisor"], respuesta: "Cuando el contrato con el cliente lo requiere" },
-      { pregunta: "¿Para qué es utilizado el 'heel'?", opciones: ["Para posicionar una polea", "Para alinear cargas", "Para fijar el polipasto", "Para levantar con grúa"], respuesta: "Para posicionar una polea" },
-      { pregunta: "¿Qué significa FS en aplicaciones de aparejo?", opciones: ["Factor de Seguridad", "Fuerza Sostenida", "Factor de Soporte", "Fuerza Simple"], respuesta: "Factor de Seguridad" },
-      { pregunta: "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?", opciones: ["Uno", "Dos", "Tres", "Depende de la longitud"], respuesta: "Uno" },
-      { pregunta: "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?", opciones: ["10 pies", "5 pies", "15 pies", "20 pies"], respuesta: "10 pies" },
-      { pregunta: "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?", opciones: ["1,520 lbs (FS 5:1)", "3,800 lbs (FS 2:1)", "760 lbs (FS 10:1)", "7,600 lbs"], respuesta: "1,520 lbs (FS 5:1)" },
-      { pregunta: "Una antena que puede transmitir una señal de hasta 360 grados se llama...", opciones: ["Unidireccional", "Bidireccional", "Multidireccional", "Omnidireccional"], respuesta: "Omnidireccional" },
-      { pregunta: "¿A qué grupo se le permite el nivel más alto de exposición MPE?", opciones: ["Público general", "Trabajadores entrenados", "Visitantes supervisados", "Técnicos con licencia"], respuesta: "Trabajadores entrenados" },
-      { pregunta: "¿Qué significa el término SOW?", opciones: ["Scope of Work", "Statement of Warning", "Safety of Workers", "Schedule of Work"], respuesta: "Scope of Work" },
-      { pregunta: "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...", opciones: ["Cerca posible", "Rápido posible", "Alejado posible", "Horizontal posible"], respuesta: "Cerca posible" },
-      { pregunta: "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?", opciones: ["Ambos lados se aprietan uniformemente", "Solo un lado hace contacto", "El perno se deforma", "Pierde tensión con el tiempo"], respuesta: "Ambos lados se aprietan uniformemente" },
-      { pregunta: "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...", opciones: ["Laboral y ambiental", "Legal y ética", "Local y nacional", "Federal y contractual"], respuesta: "Laboral y ambiental" },
-      { pregunta: "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?", opciones: ["Antena tipo plato", "Antena vertical", "Antena loop", "Antena de látigo"], respuesta: "Antena tipo plato" }
-    ];
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿Qué significa FS en aplicaciones de aparejo?",
+    "opciones": [
+      "Factor de Seguridad",
+      "Fuerza Sostenida",
+      "Factor de Soporte",
+      "Fuerza Simple"
+    ],
+    "respuesta": "Factor de Seguridad"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "Una vez determinada la senda de elevación, el capstan montado en el vehículo debe moverse lo más...",
+    "opciones": [
+      "Cerca posible",
+      "Rápido posible",
+      "Alejado posible",
+      "Horizontal posible"
+    ],
+    "respuesta": "Cerca posible"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "Una antena que puede transmitir una señal de hasta 360 grados se llama...",
+    "opciones": [
+      "Unidireccional",
+      "Bidireccional",
+      "Multidireccional",
+      "Omnidireccional"
+    ],
+    "respuesta": "Omnidireccional"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "¿Cuál es el número mínimo de kits de tierra instalados en una sola tirada?",
+    "opciones": [
+      "Uno",
+      "Dos",
+      "Tres",
+      "Depende de la longitud"
+    ],
+    "respuesta": "Uno"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿A qué grupo se le permite el nivel más alto de exposición MPE?",
+    "opciones": [
+      "Público general",
+      "Trabajadores entrenados",
+      "Visitantes supervisados",
+      "Técnicos con licencia"
+    ],
+    "respuesta": "Trabajadores entrenados"
+  },
+  {
+    "pregunta": "¿Qué significa el término SOW?",
+    "opciones": [
+      "Scope of Work",
+      "Statement of Warning",
+      "Safety of Workers",
+      "Schedule of Work"
+    ],
+    "respuesta": "Scope of Work"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Qué tipo de antena se utiliza para transmitir señal de torre a torre?",
+    "opciones": [
+      "Antena tipo plato",
+      "Antena vertical",
+      "Antena loop",
+      "Antena de látigo"
+    ],
+    "respuesta": "Antena tipo plato"
+  },
+  {
+    "pregunta": "Una cuerda sintética con fuerza de ruptura de 7,600 lbs, ¿cuál es la carga bruta máxima si FS es 5:1?",
+    "opciones": [
+      "1,520 lbs (FS 5:1)",
+      "3,800 lbs (FS 2:1)",
+      "760 lbs (FS 10:1)",
+      "7,600 lbs"
+    ],
+    "respuesta": "1,520 lbs (FS 5:1)"
+  },
+  {
+    "pregunta": "¿Cuál es el espacio libre mínimo entre líneas eléctricas de 50kV y cualquier parte de la grúa o carga?",
+    "opciones": [
+      "10 pies",
+      "5 pies",
+      "15 pies",
+      "20 pies"
+    ],
+    "respuesta": "10 pies"
+  },
+  {
+    "pregunta": "¿Cuándo se debe usar un casco duro?",
+    "opciones": [
+      "Cuando hay riesgo de caída de objetos",
+      "Cuando el contrato con el cliente lo requiere",
+      "En todo momento en el sitio",
+      "Solo si lo indica el supervisor"
+    ],
+    "respuesta": "Cuando el contrato con el cliente lo requiere"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "La política de salud, seguridad y medio ambiente de una empresa debe ser una combinación de regulación...",
+    "opciones": [
+      "Laboral y ambiental",
+      "Legal y ética",
+      "Local y nacional",
+      "Federal y contractual"
+    ],
+    "respuesta": "Laboral y ambiental"
+  },
+  {
+    "pregunta": "¿Para qué es utilizado el 'heel'?",
+    "opciones": [
+      "Para posicionar una polea",
+      "Para alinear cargas",
+      "Para fijar el polipasto",
+      "Para levantar con grúa"
+    ],
+    "respuesta": "Para posicionar una polea"
+  },
+  {
+    "pregunta": "¿Cuándo un perno en “U” se aprieta correctamente, cuál es el resultado?",
+    "opciones": [
+      "Ambos lados se aprietan uniformemente",
+      "Solo un lado hace contacto",
+      "El perno se deforma",
+      "Pierde tensión con el tiempo"
+    ],
+    "respuesta": "Ambos lados se aprietan uniformemente"
+  }
+];
 
     let preguntasActuales = [];
 
@@ -45,7 +1413,16 @@
       document.getElementById('resultado').textContent = "";
       const quiz = document.getElementById('quiz');
       quiz.innerHTML = "";
-      preguntasActuales = banco.sort(() => 0.5 - Math.random()).slice(0, 20);
+      const usadas = new Set();
+      preguntasActuales = [];
+
+      while (preguntasActuales.length < 20) {
+        const index = Math.floor(Math.random() * banco.length);
+        if (!usadas.has(index)) {
+          usadas.add(index);
+          preguntasActuales.push(banco[index]);
+        }
+      }
 
       preguntasActuales.forEach((q, i) => {
         const div = document.createElement('div');
